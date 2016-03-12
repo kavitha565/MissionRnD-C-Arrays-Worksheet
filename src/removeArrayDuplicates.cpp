@@ -21,22 +21,23 @@ int removeArrayDuplicates(int *Arr, int len)
 	return -1;
 	else
 	{
-		int i, j, b[10];
+		int i, j,k;
+		for (i = 0; i<len; i++)
+		{
+			for (j = i + 1; j<len;)
 			{
-				for (i = 0; i < len; i++)
+				if (Arr[j] == Arr[i])
 				{
-					for (j = i + 1; j < len; j++)
+					for (k = j; k<len; k++)
 					{
-						if (Arr[i] == Arr[j])
-						{
-							Arr[j] = Arr[j + 1];
-							len--;
-						}
+						Arr[k] = Arr[k + 1];
 					}
+					len--;
 				}
+				else
+					j++;
 			}
-			for (i = 0; i < len; i++)
-				printf("%d", Arr[i]);
-			return(len);
+		}
+	    return(len);
 	}
 }

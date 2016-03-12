@@ -28,7 +28,7 @@ void * studentsCount(int *Arr, int len, int score, int *lessCount, int *moreCoun
 			*lessCount = *lessCount + 1;
 
 		}
-		else if (Arr[i] > score)
+	    if (Arr[i] > score)
 		{
 			*moreCount = *moreCount + 1;
 
